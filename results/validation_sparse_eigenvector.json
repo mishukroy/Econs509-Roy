@@ -1,5 +1,5 @@
 {
-  "case": "validation_kernel_vfi",
+  "case": "validation_sparse_eigenvector",
   "parameters": {
     "beta": 0.96,
     "sigma": 1.5,
@@ -33,9 +33,9 @@
     "family": "uniform"
   },
   "solver": {
-    "method": "vfi",
-    "tolerance": 1e-10,
-    "cap": 10000,
+    "method": "howard",
+    "tolerance": 1e-08,
+    "cap": 1000,
     "modified_howard_H": 50,
     "gradient_step": 0.0005,
     "adam_learning_rate": 0.1,
@@ -45,23 +45,23 @@
     "initialization": "zeros",
     "dtype": "float64",
     "seed": 0,
-    "outer_checks": 492,
-    "updates": 491,
+    "outer_checks": 18,
+    "updates": 17,
     "inner_steps": 0,
-    "exit_metric": 9.646338782592984e-11,
+    "exit_metric": 3.5092889772844925e-16,
     "initial_exit_metric": 2.0920902447396457,
     "status": "converged",
-    "setup_seconds": 0.0022458999992522877,
-    "solver_seconds": 0.17391440000028524,
-    "total_seconds": 0.17616029999953753
+    "setup_seconds": 0.0007696000002397341,
+    "solver_seconds": 1.210824099999627,
+    "total_seconds": 1.2115936999998667
   },
   "distribution": {
-    "method": "power",
-    "updates": 201,
+    "method": "eigenvector",
+    "updates": null,
     "power_tolerance": 1e-12,
     "power_cap": 100000,
-    "eigenvalue_real": null,
-    "eigenvector_imaginary_max": null,
+    "eigenvalue_real": 1.0,
+    "eigenvector_imaginary_max": 0.0,
     "eigen_settings": {
       "k": 1,
       "sigma": 0.9999999999,
@@ -70,15 +70,16 @@
       "maxiter": 100000,
       "v0": "ones(M)/sqrt(M)"
     },
-    "distribution_seconds": 0.03101260000039474,
+    "distribution_seconds": 0.002878199999940989,
     "status": "converged",
-    "raw_minimum": 0.0,
+    "raw_minimum": -0.0,
     "correction_mass": -0.0,
-    "normalization_error": 1.1102230246251565e-16,
-    "stationarity_residual": 7.997630335765393e-13,
-    "representation": "dense",
-    "matrix_construction_seconds": 0.00024680000024090987,
-    "matrix_conversion_seconds": 0.0
+    "normalization_error": 0.0,
+    "stationarity_residual": 2.7755575615628914e-17,
+    "representation": "sparse",
+    "matrix_construction_seconds": 0.0002629000000524684,
+    "matrix_conversion_seconds": 3.0000046535860747e-07,
+    "policy_source": "validation_howard"
   },
   "statistics": {
     "grid_step": 0.2020202020202042,
@@ -87,14 +88,14 @@
     "euler_max": 0.15993577573368478,
     "euler_mean": 0.019692474225618015,
     "unavailable_reasons": {},
-    "mean_assets": 0.4863449308068651,
-    "top_mass": 0.0,
+    "mean_assets": 0.4863449307893753,
+    "top_mass": 2.2686659269111234e-28,
     "support_endpoint": 1.4141414141414141,
     "support_count": 8,
     "support_share": 0.08,
-    "slack_probability": 0.8148148148237639,
-    "euler_weighted_mean": 0.03462573781741142,
-    "maximum_weighted_contribution": 0.006007236436047137,
+    "slack_probability": 0.8148148148148149,
+    "euler_weighted_mean": 0.034625737816330826,
+    "maximum_weighted_contribution": 0.006007236435724901,
     "euler_support_max": 0.15993577573368478
   },
   "arrays": [

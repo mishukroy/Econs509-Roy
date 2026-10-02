@@ -35,8 +35,8 @@ class Checks:
         self.rows.append({"id": test_id, "input": case, "measured": measured,
                           "acceptance_criterion": criterion,
                           "status": "pending" if ok is None else "pass" if bool(ok) else "fail"})
-        self.write()
         if ok is not None and not bool(ok):
+            self.write()
             raise RuntimeError(f"Test {test_id} failed for {case}: {measured}")
 
 
@@ -248,8 +248,7 @@ def mathematical_checks(checks, name):
     checks.add(11, name + ":statistics/masks", differences, "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))", ok)
 
 
-def verify(stage=3):
-    checks = Checks(stage)
+def kernel_check(checks):
     reference, digest = reference_interface()
     a, m = read_case("validation_kernel_vfi")
     difference = float(np.max(np.abs(a["V"] - reference["V"])))
@@ -258,17 +257,80 @@ def verify(stage=3):
                "agent_outer_checks": m["solver"]["outer_checks"], "manual_outer_checks": int(reference["iterations"]), "reference_sha256": digest,
                "pi_difference_diagnostic": float(np.max(np.abs(a["pi"] - reference["pi"])))},
                "max value difference <= 1e-8; zero policy mismatches", difference <= 1e-8 and mismatches == 0)
+    return difference, mismatches
+
+
+def validation_settings_check(checks, names):
+    expected_prices = prices()
+    expected_parameters = {"beta": .96, "sigma": 1.5, "labor": 1., "k_min": 0.,
+                           "z": 1., "alpha": .36, "delta": .1, "K0": 5.,
+                           "L": 1., "r": expected_prices[0], "w": expected_prices[1]}
+    howard, _ = read_case("validation_howard")
+    measured = {}
+    ok = True
+    for name in names:
+        a, m = read_case(name)
+        expected_method = ("howard" if "dense" in name or "sparse" in name or name == "validation_howard"
+                           else "modified_howard" if name == "validation_modified_howard" else "vfi")
+        expected_tolerance = 1e-10 if name == "validation_kernel_vfi" else 1e-8
+        grid_error = float(np.max(np.abs(a["k_grid"] - 20*np.arange(100)/99)))
+        parameter_error = max(abs(m["parameters"][key]-value) for key, value in expected_parameters.items())
+        policy_mismatches = int(np.count_nonzero(a["G"] != howard["G"])) if "dense" in name or "sparse" in name else 0
+        setting_ok = (m["grid"] == {"N": 100, "kmax": 20., "family": "uniform"}
+                      and a["V"].shape == (100, 2) and a["G"].shape == (100, 2)
+                      and a["k_grid"][0] == 0 and a["k_grid"][-1] == 20
+                      and m["solver"]["method"] == expected_method
+                      and m["solver"]["tolerance"] == expected_tolerance
+                      and m["solver"]["seed"] == 0
+                      and np.array_equal(m["parameters"]["epsilon"], [.8, 1.2])
+                      and np.array_equal(m["parameters"]["P"], [[.5, .5], [.5, .5]])
+                      and grid_error <= 1e-12 and parameter_error <= 1e-12 and policy_mismatches == 0)
+        if "dense" in name or "sparse" in name:
+            representation = "dense" if "dense" in name else "sparse"
+            distribution_method = name.split(representation + "_", 1)[1]
+            setting_ok = setting_ok and m["distribution"]["representation"] == representation
+            setting_ok = setting_ok and m["distribution"]["method"] == distribution_method
+            setting_ok = setting_ok and m["distribution"]["policy_source"] == "validation_howard"
+        measured[name] = {"grid_error": grid_error, "parameter_error": float(parameter_error),
+                          "Howard_policy_mismatches": policy_mismatches, "settings_match": bool(setting_ok)}
+        ok = ok and setting_ok
+    checks.add(9, "saved validation settings and common Howard policy", measured,
+               "N=100 uniform [0,20]; specified model/tolerances/methods, exact discrete settings; numeric error <= 1e-12; common Howard policy", ok)
+
+
+def verify(stage=3, kernel_only=False):
+    checks = Checks(stage)
+    difference, mismatches = kernel_check(checks)
     bellman_tests(checks)
+    if kernel_only:
+        solver_check(checks, "validation_kernel_vfi")
+        for test_id in (2, 3, 4, 5, 6, 8, 9, 10, 11):
+            checks.add(test_id, "remaining stage-3 validation", None,
+                       "Requires Howard validation and six distribution runs; SciPy environment pending")
+        checks.add(12, "stage-4 completeness and reproduction", None, "Full experiments and student choices required")
+        checks.write()
+        print(json.dumps({"passed": sum(r["status"] == "pass" for r in checks.rows),
+                          "pending": sum(r["status"] == "pending" for r in checks.rows),
+                          "kernel_value_difference": difference, "kernel_policy_mismatches": mismatches}, indent=2))
+        return checks
     for name in ("validation_kernel_vfi", "validation_vfi", "validation_howard", "validation_modified_howard"):
         solver_check(checks, name)
     mathematical_checks(checks, "validation_howard")
     distribution_names = [f"validation_{rep}_{method}" for rep in ("dense", "sparse") for method in ("power", "eigenvector", "equations")]
+    validation_settings_check(checks, ["validation_kernel_vfi", "validation_vfi", "validation_howard", "validation_modified_howard", *distribution_names])
     for name in distribution_names:
         mathematical_checks(checks, name)
     pairs = [(float(np.max(np.abs(read_case(a)[0]["pi"] - read_case(b)[0]["pi"]))), a, b)
              for a, b in itertools.combinations(distribution_names, 2)]
     worst = max(pairs)
-    checks.add(9, "six Howard-policy validation distributions", {"maximum_pairwise_difference": worst[0], "pair": list(worst[1:])}, "maximum pairwise sup-norm difference <= 1e-8", worst[0] <= 1e-8)
+    groups = {}
+    for label, subset in [("within_dense", [p for p in pairs if "dense" in p[1] and "dense" in p[2]]),
+                          ("within_sparse", [p for p in pairs if "sparse" in p[1] and "sparse" in p[2]]),
+                          ("across_representations", [p for p in pairs if ("dense" in p[1]) != ("dense" in p[2])])]:
+        maximum = max(subset)
+        groups[label] = {"maximum_pairwise_difference": maximum[0], "pair": list(maximum[1:])}
+    checks.add(9, "six Howard-policy validation distributions", {"maximum_pairwise_difference": worst[0], "pair": list(worst[1:]), **groups},
+               "maximum pairwise sup-norm difference <= 1e-8", worst[0] <= 1e-8)
     import household as impl
     howard, _ = read_case("validation_howard")
     Q = impl.transition(howard["G"].ravel(order="F"), np.full((2, 2), .5))
@@ -294,9 +356,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--stage", type=int, choices=[3], default=3)
     parser.add_argument("--interface-only", action="store_true")
+    parser.add_argument("--kernel-only", action="store_true", help="Run the available NumPy checks while the SciPy environment is pending")
     args = parser.parse_args()
     if args.interface_only:
         ref, digest = reference_interface()
         print(json.dumps({"keys": list(ref), "shapes": {k: list(v.shape) for k, v in ref.items()}, "sha256": digest}))
     else:
-        verify(args.stage)
+        verify(args.stage, kernel_only=args.kernel_only)

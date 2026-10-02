@@ -10,6 +10,23 @@ python code/run_all.py --stage 3
 python tests/verify.py --stage 3
 ```
 
+For this computer, the existing Anaconda interpreter is
+`C:\Users\roymi\anaconda3\python.exe`. In PowerShell, when `python` is not
+on PATH, the corresponding commands are:
+
+```powershell
+& 'C:\Users\roymi\anaconda3\python.exe' code/run_all.py --stage 3
+& 'C:\Users\roymi\anaconda3\python.exe' tests/verify.py --stage 3
+```
+
+Stage-3 verification used Python 3.13.5, `numpy==2.1.3`, `scipy==1.15.3`,
+and `matplotlib==3.10.0` from that existing installation.
+
+When SciPy is unavailable, `python tests/verify.py --kernel-only` runs the
+manual comparison, scalar Bellman checks and kernel stopping/count check,
+and records the remaining validation checks as pending. It does not certify
+stage 3.
+
 The default `python code/run_all.py` reproduces validation while no method
 choices exist. Later experiments require the student's prompt and choices.
 Use `--part abc`, then `--part e`, `--part f`, `--part g`, and `--part h` only

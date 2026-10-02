@@ -1,5 +1,5 @@
 {
-  "case": "validation_kernel_vfi",
+  "case": "validation_sparse_power",
   "parameters": {
     "beta": 0.96,
     "sigma": 1.5,
@@ -33,9 +33,9 @@
     "family": "uniform"
   },
   "solver": {
-    "method": "vfi",
-    "tolerance": 1e-10,
-    "cap": 10000,
+    "method": "howard",
+    "tolerance": 1e-08,
+    "cap": 1000,
     "modified_howard_H": 50,
     "gradient_step": 0.0005,
     "adam_learning_rate": 0.1,
@@ -45,15 +45,15 @@
     "initialization": "zeros",
     "dtype": "float64",
     "seed": 0,
-    "outer_checks": 492,
-    "updates": 491,
+    "outer_checks": 18,
+    "updates": 17,
     "inner_steps": 0,
-    "exit_metric": 9.646338782592984e-11,
+    "exit_metric": 3.5092889772844925e-16,
     "initial_exit_metric": 2.0920902447396457,
     "status": "converged",
-    "setup_seconds": 0.0022458999992522877,
-    "solver_seconds": 0.17391440000028524,
-    "total_seconds": 0.17616029999953753
+    "setup_seconds": 0.0007696000002397341,
+    "solver_seconds": 1.210824099999627,
+    "total_seconds": 1.2115936999998667
   },
   "distribution": {
     "method": "power",
@@ -70,15 +70,16 @@
       "maxiter": 100000,
       "v0": "ones(M)/sqrt(M)"
     },
-    "distribution_seconds": 0.03101260000039474,
+    "distribution_seconds": 0.009573299999829032,
     "status": "converged",
     "raw_minimum": 0.0,
     "correction_mass": -0.0,
     "normalization_error": 1.1102230246251565e-16,
     "stationarity_residual": 7.997630335765393e-13,
-    "representation": "dense",
-    "matrix_construction_seconds": 0.00024680000024090987,
-    "matrix_conversion_seconds": 0.0
+    "representation": "sparse",
+    "matrix_construction_seconds": 0.00040470000021741726,
+    "matrix_conversion_seconds": 5.000001692678779e-07,
+    "policy_source": "validation_howard"
   },
   "statistics": {
     "grid_step": 0.2020202020202042,
