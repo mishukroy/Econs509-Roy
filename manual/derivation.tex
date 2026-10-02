@@ -1,0 +1,140 @@
+\documentclass[11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\usepackage{amsmath,amssymb,booktabs}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\newcommand{\V}{\mathcal V}
+\newcommand{\R}{\mathcal R}
+\newcommand{\G}{\mathcal G}
+\newcommand{\Q}{\mathcal Q}
+\newcommand{\PP}{\mathcal P}
+\begin{document}
+\begin{center}
+{\large\bfseries PS1, Part M.1: Discrete-State Formulation and Euler Equation}\\[3pt]
+{\small ECONS 509 \quad Worked derivation for Question 2}
+\end{center}
+
+\textbf{1. Household problem and fixed prices.}
+Let $k$ denote current assets, $k'$ next-period assets, and $s$ the labor-efficiency state.
+The household solves
+\begin{equation}
+v(k,s)=\max_{k'\in\mathcal K,\ k'\geq\underline k,\ c>0}
+\left\{u(c)+\beta\sum_{s'=1}^2\PP_{ss'}v(k',s')\right\},
+\qquad c=(1+r^0)k+w^0\bar\epsilon_s\bar l-k',
+\end{equation}
+where $u(c)=c^{1-\sigma}/(1-\sigma)$ and $\underline k=0$.
+Use $\beta=0.96$, $\sigma=1.5$, $\bar l=1$, $\bar\epsilon=(0.8,1.2)$,
+and $\PP_{ss'}=0.5$ for every pair of shocks. Rows of $\PP$ condition on the current shock.
+For $Y=zK^\alpha L^{1-\alpha}$, take $z=1$, $\alpha=0.36$, $\delta=0.1$, and $K^0=5$.
+The shock probabilities are $(0.5,0.5)$, so $L^*=\sum_s\pi_s^{shock}\bar\epsilon_s\bar l=1$ and
+\[
+w^0=(1-\alpha)z(K^0/L^*)^\alpha\simeq1.1423762763,
+\qquad r^0=\alpha z(K^0/L^*)^{\alpha-1}-\delta\simeq0.0285173311.
+\]
+These prices stay fixed; mean household assets need not equal $K^0$.
+
+\textbf{2. Vector form.}
+Let $\mathcal K=\{k_1,\ldots,k_N\}$, $S=2$, $M=NS$, and
+$m(n,s)=(s-1)N+n$. Stack the columns of $\V$ in $x=\V(:)$:
+all asset nodes in shock 1 precede those in shock 2.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Object & Definition & Dimension\\
+\midrule
+$\V$ & $\V_{n,s}=v(k_n,s)$ & $N\times S$\\
+$x=\V(:)$ & Column-stacked values & $M\times1$\\
+$\R$ & Current-state and savings-choice utility & $M\times N$\\
+$\G$ & Maximizing savings indices & $N\times S$\\
+$\Q_G$ & Joint transition under policy $G$ & $M\times M$\\
+$\R_G^*$, $\pi$ & Chosen utility, joint invariant distribution & $M\times1$ each\\
+\bottomrule
+\end{tabular}
+\end{center}
+Define $c_{n,s,n'}=(1+r^0)k_n+w^0\bar\epsilon_s\bar l-k_{n'}$ and
+\[
+\R_{m(n,s),n'}=
+\begin{cases}
+u(c_{n,s,n'}),& c_{n,s,n'}>0,\\
+-\infty,&c_{n,s,n'}\leq0.
+\end{cases}
+\]
+Since $(\PP\V^T)_{s,n'}=\sum_{s'}\PP_{ss'}\V_{n',s'}$, the stacked Bellman equation is
+\begin{equation}
+\boxed{\V(:)=\mathcal T(x)=\max_{\mathrm{columns}}
+\left[\R+\beta(\PP\V^T)\otimes\mathbf1_N\right].}
+\end{equation}
+The maximization is over savings choices. Its argmax gives $\G(:)$, with the smallest
+index selected at an exact tie. Set $g(k_n,s)=k_{\G(n,s)}$. Then
+\begin{equation}
+\Q_G[m(n,s),m(n',s')]=\PP_{ss'}\mathbf1\{n'=\G(n,s)\},
+\qquad \R_G^*[m(n,s)]=\R[m(n,s),\G(n,s)].
+\end{equation}
+Each row of $\Q_G$ sums to one. For a fixed policy,
+$x_G=\R_G^*+\beta\Q_Gx_G$; the column distribution satisfies
+$\Q_G^T\pi=\pi$, $\mathbf1^T\pi=1$, and $\pi\geq0$.
+
+\newpage
+\textbf{3. Continuous-choice Euler equation.}
+Now allow continuous $k'\geq\underline k$. With multiplier $\mu\geq0$ on
+$k'-\underline k\geq0$, write
+\[
+\mathcal L=u\big((1+r^0)k+w^0\bar\epsilon_s\bar l-k'\big)
++\beta\sum_{s'}\PP_{ss'}v(k',s')+\mu(k'-\underline k).
+\]
+At an optimum, the first-order and complementary-slackness conditions are
+\begin{align}
+-u'(c)+\beta\sum_{s'}\PP_{ss'}v_k(k',s')+\mu&=0,\\
+\mu\geq0,\qquad k'-\underline k\geq0,\qquad\mu(k'-\underline k)&=0.
+\end{align}
+The envelope condition, holding prices fixed, is
+\begin{equation}
+v_k(k,s)=(1+r^0)u'(c(k,s)).
+\end{equation}
+Evaluating the envelope condition at next period's state and using $u'(c)=c^{-\sigma}$ gives
+\begin{equation}
+\boxed{c(k,s)^{-\sigma}
+=\beta(1+r^0)\sum_{s'}\PP_{ss'}c(k',s')^{-\sigma}+\mu.}
+\end{equation}
+Thus current marginal utility is at least discounted expected next-period marginal utility
+times the gross return. If $k'>\underline k$, then $\mu=0$ and the Euler equation holds
+with equality. At the borrowing limit, it may be a strict inequality. This condition
+assumes no active artificial upper asset bound; choices at that grid boundary are flagged
+as a possible truncation issue.
+
+\textbf{4. Euler residual for the discrete policy.}
+Using the grid policy, compute consumption by exact index lookup:
+\begin{align}
+c_{n,s}&=(1+r^0)k_n+w^0\bar\epsilon_s\bar l-k_{\G(n,s)},\\
+c^{next}_{n,s,s'}&=(1+r^0)k_{\G(n,s)}+w^0\bar\epsilon_{s'}\bar l
+-k_{\G(\G(n,s),s')}.
+\end{align}
+Define the Euler-implied consumption and the absolute, unit-free consumption error as
+\begin{equation}
+c^{EE}_{n,s}=\left[\beta(1+r^0)\sum_{s'}\PP_{ss'}
+(c^{next}_{n,s,s'})^{-\sigma}\right]^{-1/\sigma},
+\qquad \boxed{E_{n,s}=\left|1-\frac{c^{EE}_{n,s}}{c_{n,s}}\right|.}
+\end{equation}
+For part (h), use all states in $A=\{(n,s):k_{\G(n,s)}>0\}$, flag upper-bound choices,
+and plot $E_{n,s}$ against $k_n$ for each shock. Report the maximum and arithmetic mean
+over $A$. With conditional weights $q_{n,s}=\pi_{n,s}/\sum_A\pi_{n,s}$,
+report $\sum_Aq_{n,s}E_{n,s}$ and $\max_A(q_{n,s}E_{n,s})$, labeling the latter
+the maximum weighted contribution. Also report the maximum over slack states with
+$\pi_{n,s}>10^{-12}$. Empty sets or zero weight denominators give unavailable summaries.
+Discrete choices need not satisfy the continuous Euler equality exactly.
+
+\textbf{5. Link to the M.2 kernel.}
+The kernel uses $N=100$ uniform points on $[0,20]$, starts from $\V_0=0$, and stops when
+\[
+\max_m\frac{|\mathcal T(x)_m-x_m|}{|x_m|+1}\leq10^{-10}.
+\]
+It returns the current values and their greedy policy before another update; the iteration
+count includes the stopping check. Power iteration starts at $\pi_0=\mathbf1/M$ and returns
+the updated distribution once $\|\pi_{j+1}-\pi_j\|_\infty\leq10^{-12}$.
+In Python, column stacking uses \texttt{order="F"}, and saved policy indices are zero-based.
+The script saves \texttt{V}, \texttt{G}, \texttt{pi}, and \texttt{iterations} in
+\texttt{kernel\_output.npz}, matching the specification's interface.
+\end{document}
