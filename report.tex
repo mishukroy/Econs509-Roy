@@ -1,4 +1,6 @@
 \documentclass[10pt]{article}
+% Save as report.tex beside the existing results/ folder; compile from that assignment folder.
+
 \usepackage[margin=0.8in]{geometry}
 \usepackage{amsmath,amssymb,booktabs,graphicx,adjustbox,float}
 \usepackage[hidelinks]{hyperref}
@@ -9,7 +11,6 @@
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.35em}
 \setlength{\tabcolsep}{5pt}
-\newcommand{\rt}[3]{\begin{table}[H]\centering\small\caption{#2}\label{#3}\begin{adjustbox}{max width=\linewidth}\input{results/brief_#1.tex}\end{adjustbox}\end{table}}
 \title{Homework 1: Discrete State Dynamic Programming}
 \author{Mishuk Roy}
 \date{ECONS 509, Fall 2026}
@@ -27,7 +28,21 @@ The baseline uses $N=1000$ uniform points on $[0,20]$, zero initial values, and
 d(x)=\max_m\frac{|\mathcal T(x)_m-x_m|}{|x_m|+1}\leq10^{-8}.
 \]
 Counts include the stopping check; updates equal checks minus one.
-\rt{solvers}{Baseline household solvers. Setup and solve times are separate.}{tab:solvers}
+\begin{table}[H]\centering\small
+\caption{Baseline household solvers. Setup and solve times are separate.}\label{tab:solvers}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrrl}
+\toprule
+Method & Checks & Inner steps & Setup (s) & Solve (s) & $d(x)$ & Status \\
+\midrule
+VFI & 379 & 0 & 0.039 & 2.436 & $9.71806\times10^{-9}$ & converged \\
+Howard & 15 & 0 & 0.036 & 0.702 & $6.01925\times10^{-16}$ & converged \\
+Modified Howard & 15 & 700 & 0.033 & 0.132 & $1.65884\times10^{-13}$ & converged \\
+Fixed-step GD & 20000 & 0 & 0.155 & 163.109 & 1.2576 & unconverged \\
+Adam & 20000 & 0 & 0.145 & 159.890 & 0.125301 & unconverged \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 The contraction calculation $\log(10^{-8})/\log(0.96)=451.244$ predicts the scale
 of an eight-order error reduction; VFI takes 379 checks. The difference reflects
 the relative residual criterion, initial error, and realized contraction.
@@ -41,7 +56,18 @@ limit $2/(1+\beta\sqrt{2000})^2\simeq0.00103623$; Adam uses learning rate $0.1$.
 Both remain unconverged at 20,000 checks. For a fixed greedy policy, let
 $J=I-\beta Q_G$. The assignment's lower-bound benchmark is
 $\kappa(J^TJ)\geq(1-\beta)^{-2}=625$.
-\rt{conditioning}{Local singular values and condition numbers, from \texttt{results/d\_theory.json}.}{tab:conditioning}
+\begin{table}[H]\centering\small
+\caption{Local singular values and condition numbers, from \texttt{results/d\_theory.json}.}\label{tab:conditioning}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrr}
+\toprule
+Policy & $s_{\min}(J)$ & $s_{\max}(J)$ & $\kappa_2(J)$ & $\kappa_2(J^TJ)$ \\
+\midrule
+$x=0$ & 0.00131756 & 30.3592 & 23042 & $5.30934\times10^{8}$ \\
+Howard solution & 0.0199828 & 2.03095 & 101.635 & 10329.7 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 The severe conditioning at zero values is consistent with GD stalling. These
 fixed-policy diagnostics do not guarantee global convergence. The Howard time
 includes the first SciPy import, so timings describe the measured runs.
@@ -49,7 +75,19 @@ includes the first SciPy import, so timings describe the measured runs.
 \section{Invariant distribution: parts (b)--(d)}
 Using the same Howard policy, I solve $Q_G^T\pi=\pi$ with $\mathbf1^T\pi=1$
 by power iteration, inverse iteration, and a normalized equation system.
-\rt{distributions}{Dense and CSR distribution methods. Times exclude common matrix construction/conversion; residuals are $\|Q_G^T\pi-\pi\|_\infty$.}{tab:distributions}
+\begin{table}[H]\centering\small
+\caption{Dense and CSR distribution methods. Times exclude common matrix construction/conversion; residuals are $\|Q_G^T\pi-\pi\|_\infty$.}\label{tab:distributions}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrr}
+\toprule
+Method & Dense (s) & CSR (s) & Dense residual & CSR residual \\
+\midrule
+Power iteration & 0.282998 & 0.006451 & $7.76899\times10^{-13}$ & $7.76906\times10^{-13}$ \\
+Inverse iteration & 0.162382 & 0.008551 & $1.38778\times10^{-17}$ & $1.38778\times10^{-17}$ \\
+Modified equations & 0.140231 & 0.007548 & $2.70617\times10^{-16}$ & $1.04083\times10^{-17}$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 The largest pairwise differences are $5.49004\times10^{-12}$ within dense,
 $5.48995\times10^{-12}$ within CSR, and $5.49005\times10^{-12}$ across formats.
 All pass the $10^{-8}$ agreement criterion and distribution checks. I select
@@ -59,7 +97,21 @@ All subsequent experiments retain the chosen methods.
 \section{Asset range and grid: parts (e)--(g)}
 At $N=1000$, support means asset nodes with marginal probability above $10^{-12}$;
 support share is their fraction of all nodes.
-\rt{ranges}{Uniform-grid range trials. The accepted top-mass threshold is $10^{-12}$.}{tab:ranges}
+\begin{table}[H]\centering\small
+\caption{Uniform-grid range trials. The accepted top-mass threshold is $10^{-12}$.}\label{tab:ranges}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrr}
+\toprule
+$k_{\max}$ & Top-node mass & Support endpoint & Support share \\
+\midrule
+2 & $6.01277\times10^{-5}$ & 2.0000 & 100.0\% \\
+5 & 0 & 3.2182 & 63.4\% \\
+10 & 0 & 3.2132 & 32.2\% \\
+20 & 0 & 3.2633 & 16.4\% \\
+40 & 0 & 3.2432 & 8.2\% \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 I reject $k_{\max}=2$ and choose $k_{\max}=5$, the smallest tested range with
 zero top mass and room above its support endpoint. Wider ranges reduce resolution
 for a fixed number of nodes.
@@ -69,15 +121,40 @@ On $[0,5]$, I compare the uniform grid with the exp-log grid
 k_n=\exp\!\left[\frac{n-1}{N-1}\log(1+k_{\max})\right]-1,
 \qquad n=1,\ldots,N.
 \]
-\rt{grids}{Grid comparison at $N=1000$; error statistics use positive-saving states.}{tab:grids}
+\begin{table}[H]\centering\small
+\caption{Grid comparison at $N=1000$; error statistics use positive-saving states.}\label{tab:grids}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrr}
+\toprule
+Grid & Mean error & Maximum error & Weighted mean \\
+\midrule
+Uniform & 0.00120403 & 0.00412096 & 0.001472 \\
+Exp-log & 0.00108912 & 0.00612422 & $8.04657\times10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 I choose exp-log spacing for its lower mean and stationary-weighted errors,
 accepting its higher overall maximum. Both grids have zero top mass.
-\rt{nodes}{Exp-log refinement on $[0,5]$. Total numerical time excludes verification and plot export.}{tab:nodes}
+\begin{table}[H]\centering\small
+\caption{Exp-log refinement on $[0,5]$. Total numerical time excludes verification and plot export.}\label{tab:nodes}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrrr}
+\toprule
+$N$ & Mean assets & Mean error & Maximum error & Weighted mean & Time (s) \\
+\midrule
+100 & 0.439733 & 0.0117694 & 0.0469941 & 0.00870041 & 0.688 \\
+500 & 0.450191 & 0.00225802 & 0.010252 & 0.00150289 & 0.086 \\
+1000 & 0.450854 & 0.00108912 & 0.00612422 & $8.04657\times10^{-4}$ & 0.195 \\
+2000 & 0.450965 & $5.63096\times10^{-4}$ & 0.00297408 & $3.95872\times10^{-4}$ & 0.718 \\
+5000 & 0.451125 & $2.23223\times10^{-4}$ & 0.00118456 & $1.55824\times10^{-4}$ & 4.363 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 I select $N=5000$: it has the lowest tested errors and an acceptable runtime of
 4.36 seconds. Mean assets stabilize near 0.45. They need not equal $K^0$, because
 prices are fixed. At $N=100$, one upper-bound choice is flagged, with top mass
 $2.67276\times10^{-53}$; the finer grids have neither upper-bound choices nor top
-mass. Figure~\ref{fig:grids} plots both shocks at every $N$; distribution curves
+mass. Figures~\ref{fig:grid100}--\ref{fig:grid5000} plot both shocks at every $N$; distribution curves
 show joint masses, not densities. My dated October 1--2 choices are in \texttt{log.md}.
 
 \clearpage
@@ -91,11 +168,37 @@ c^{EE}_{n,s}=\left[\beta(1+r^0)\sum_{s'}P_{ss'}
 The equality applies off the borrowing constraint and artificial upper bound;
 discrete choices leave a residual. On $A=\{g_{n,s}>0\}$, normalize stationary
 weights as $q_{n,s}=\pi_{n,s}/\sum_A\pi$. The weighted maximum is $\max_A(qE)$.
-\rt{accuracy}{Selected $N=5000$ Euler errors. Support maximum restricts to positive-saving states with joint probability above $10^{-12}$.}{tab:accuracy}
+\begin{table}[H]\centering\small
+\caption{Selected $N=5000$ Euler errors. Support maximum restricts to positive-saving states with joint probability above $10^{-12}$.}\label{tab:accuracy}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lrrrr}
+\toprule
+Mean & Maximum & Weighted mean & $\max(qE)$ & Support maximum \\
+\midrule
+$2.23223\times10^{-4}$ & 0.00118456 & $1.55824\times10^{-4}$ & $6.44445\times10^{-6}$ & $9.66045\times10^{-4}$ \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 Regressing log error on log maximum grid step gives slopes 1.01312 (mean) and
 0.932503 (maximum). Figure~\ref{fig:accuracy} supports approximately first-order
 scaling over these grids; it does not establish an asymptotic theorem.
-\rt{checks}{Final-grid numerical checks. All meet their registered criteria.}{tab:checks}
+\begin{table}[H]\centering\small
+\caption{Final-grid numerical checks. All meet their registered criteria.}\label{tab:checks}
+\begin{adjustbox}{max width=\linewidth}
+\begin{tabular}{lr}
+\toprule
+Final-grid check & Measured value \\
+\midrule
+Policy monotonicity violations & 0 \\
+Minimum consumption & 0.913901 \\
+Maximum budget discrepancy & 0 \\
+Distribution sum & 1.000000 \\
+Minimum probability & 0 \\
+Stationarity residual & $8.52166\times10^{-13}$ \\
+Top-node mass / upper-bound choices & 0 / 0 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}\end{table}
 The selected household solve uses 14 checks, 13 updates, and 650 inner steps,
 with $d(x)=6.31419\times10^{-9}$; power iteration uses 168 updates.
 The agent's final audit records 484 passes, zero failures, and zero pending checks.
@@ -110,12 +213,13 @@ distribution sum 1.0, and Euler-error agreement within $2.22\times10^{-16}$.
 The October 1--2 Codex entries document its automated tests, experiments, and
 reproduction. Those agent measurements are distinct from my dated personal checks.
 
-Codex (GPT-6; exact build unavailable) worked with Full Access to the repository,
+Codex (GPT-6; exact build unavailable) worked in my local assignment repository
+under the permissions configured for each session,
 implementing solvers and tests, running experiments, and producing outputs.
 I supplied the inputs and manual reference, selected methods and grids, and recorded
 personal verification. ChatGPT assisted with the report-check prompt, drafted and
 shortened this report, checked saved numbers, and prepared tables, plots, and the
-PDF. This report is AI-assisted and remains subject to my final review.
+PDF.
 
 \clearpage
 \appendix
@@ -123,15 +227,42 @@ PDF. This report is AI-assisted and remains subject to my final review.
 \begin{figure}[H]\centering
 \includegraphics[width=0.93\linewidth]{results/h_euler.pdf}\par\medskip
 \includegraphics[width=0.88\linewidth]{results/h_scaling.pdf}
-\caption{Selected-grid Euler residuals (top) and their scaling across all five grids (bottom).}
+\caption{Selected-grid Euler residuals (top) and scaling across all five grids (bottom).}
 \label{fig:accuracy}
 \end{figure}
 \clearpage
 \begin{figure}[H]\centering
-\includegraphics[width=\linewidth]{results/brief_V.pdf}\par\medskip
-\includegraphics[width=\linewidth]{results/brief_g.pdf}\par\medskip
-\includegraphics[width=\linewidth]{results/brief_pi.pdf}
-\caption{Values, savings policies, and joint invariant masses for both shocks, using every saved node at $N=100,500,1000,2000,5000$. Overlapping curves reflect close solutions.}
-\label{fig:grids}
+\includegraphics[width=0.94\linewidth]{results/g_N100_value.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N100_policy.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N100_distribution.pdf}\par\medskip
+\caption{Values (top), savings policies (middle), and joint invariant probability masses (bottom) at $N=100$, for both labor-efficiency states. Masses are probabilities at grid nodes, not densities.}\label{fig:grid100}
+\end{figure}
+\clearpage
+\begin{figure}[H]\centering
+\includegraphics[width=0.94\linewidth]{results/g_N500_value.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N500_policy.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N500_distribution.pdf}\par\medskip
+\caption{Values (top), savings policies (middle), and joint invariant probability masses (bottom) at $N=500$, for both labor-efficiency states. Masses are probabilities at grid nodes, not densities.}\label{fig:grid500}
+\end{figure}
+\clearpage
+\begin{figure}[H]\centering
+\includegraphics[width=0.94\linewidth]{results/g_N1000_value.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N1000_policy.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N1000_distribution.pdf}\par\medskip
+\caption{Values (top), savings policies (middle), and joint invariant probability masses (bottom) at $N=1000$, for both labor-efficiency states. Masses are probabilities at grid nodes, not densities.}\label{fig:grid1000}
+\end{figure}
+\clearpage
+\begin{figure}[H]\centering
+\includegraphics[width=0.94\linewidth]{results/g_N2000_value.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N2000_policy.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N2000_distribution.pdf}\par\medskip
+\caption{Values (top), savings policies (middle), and joint invariant probability masses (bottom) at $N=2000$, for both labor-efficiency states. Masses are probabilities at grid nodes, not densities.}\label{fig:grid2000}
+\end{figure}
+\clearpage
+\begin{figure}[H]\centering
+\includegraphics[width=0.94\linewidth]{results/g_N5000_value.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N5000_policy.pdf}\par\medskip
+\includegraphics[width=0.94\linewidth]{results/g_N5000_distribution.pdf}\par\medskip
+\caption{Values (top), savings policies (middle), and joint invariant probability masses (bottom) at $N=5000$, for both labor-efficiency states. Masses are probabilities at grid nodes, not densities.}\label{fig:grid5000}
 \end{figure}
 \end{document}
