@@ -1,0 +1,328 @@
+{
+  "stage": 4,
+  "checks": [
+    {
+      "id": 12,
+      "input": "g_N100:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    }
+  ],
+  "passed": 20,
+  "pending": 0,
+  "failed": 0
+}

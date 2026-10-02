@@ -1,0 +1,38 @@
+{
+  "contraction_prediction": 451.2440158898249,
+  "loss_hessian_condition_lower_bound": 624.9999999999989,
+  "singular_values_status": "See conditioning entries for computed values or feasibility limitations",
+  "condition_definitions": {
+    "J": "cond2(J)",
+    "loss_Hessian": "cond2(J)^2"
+  },
+  "conditioning": {
+    "zero": {
+      "status": "computed",
+      "singular_min": 0.001317558508497337,
+      "singular_max": 30.359183096125367,
+      "cond2_J": 23041.99995698842,
+      "cond2_loss_Hessian": 530933762.0178544,
+      "small_eigenpair_residual": 9.189780958058678e-13,
+      "large_eigenpair_residual": 8.321876521222293e-11,
+      "method": "Eigenvalues of J.T@J using deterministic eigsh, shift-invert for the minimum",
+      "seconds": 0.11104379999960656
+    },
+    "howard": {
+      "status": "computed",
+      "singular_min": 0.019982799136586158,
+      "singular_max": 2.030950665162915,
+      "cond2_J": 101.63494369737634,
+      "cond2_loss_Hessian": 10329.661780368859,
+      "small_eigenpair_residual": 1.089623183347932e-16,
+      "large_eigenpair_residual": 2.7459926693618186e-11,
+      "method": "Eigenvalues of J.T@J using deterministic eigsh, shift-invert for the minimum",
+      "seconds": 0.0878538999995726
+    }
+  },
+  "joint_state_count": 2000,
+  "local_loss_hessian_norm_upper_bound": 1930.065010335992,
+  "fixed_gradient_step": 0.0005,
+  "local_fixed_step_upper_bound": 0.0010362345254120915,
+  "fixed_step_below_local_bound": true
+}

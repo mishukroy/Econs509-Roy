@@ -1,0 +1,79 @@
+{
+  "case": "a_modified_howard",
+  "parameters": {
+    "beta": 0.96,
+    "sigma": 1.5,
+    "labor": 1.0,
+    "k_min": 0.0,
+    "z": 1.0,
+    "alpha": 0.36,
+    "delta": 0.1,
+    "K0": 5.0,
+    "epsilon": [
+      0.8,
+      1.2
+    ],
+    "P": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "L": 1.0,
+    "w": 1.1423762763050482,
+    "r": 0.028517331084317893
+  },
+  "grid": {
+    "N": 1000,
+    "kmax": 20.0,
+    "family": "uniform"
+  },
+  "solver": {
+    "method": "modified_howard",
+    "tolerance": 1e-08,
+    "cap": 10000,
+    "modified_howard_H": 50,
+    "gradient_step": 0.0005,
+    "adam_learning_rate": 0.1,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-08,
+    "initialization": "zeros",
+    "dtype": "float64",
+    "seed": 0,
+    "outer_checks": 15,
+    "updates": 14,
+    "inner_steps": 700,
+    "exit_metric": 1.6588423037075027e-13,
+    "initial_exit_metric": 2.0920902447396457,
+    "status": "converged",
+    "setup_seconds": 0.03315740000016376,
+    "solver_seconds": 0.13171419999980571,
+    "total_seconds": 0.16487159999996948
+  },
+  "distribution": null,
+  "statistics": {
+    "grid_step": 0.020020020020023566,
+    "slack_count": 1994,
+    "upper_bound_count": 0,
+    "euler_max": 0.017022358271073346,
+    "euler_mean": 0.003854540720910523,
+    "unavailable_reasons": {
+      "distribution_statistics": "This solver run has no invariant distribution"
+    }
+  },
+  "arrays": [
+    "k_grid",
+    "V",
+    "G",
+    "g",
+    "c",
+    "E",
+    "slack_mask",
+    "upper_bound_mask"
+  ]
+}

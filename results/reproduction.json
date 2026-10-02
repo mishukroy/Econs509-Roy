@@ -1,0 +1,964 @@
+{
+  "stage": 4,
+  "checks": [
+    {
+      "id": 12,
+      "input": "scratch clean start/completion",
+      "measured": {
+        "clean_start": true,
+        "complete": true
+      },
+      "acceptance_criterion": "no initial results; python code/run_all.py completed without new choices",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "original files preserved",
+      "measured": {
+        "changed": []
+      },
+      "acceptance_criterion": "original numerical outputs and protected settings/reference unchanged",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "scratch output completeness",
+      "measured": {
+        "missing": []
+      },
+      "acceptance_criterion": "all required outputs regenerate in scratch",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "scratch choice configuration",
+      "measured": null,
+      "acceptance_criterion": "recorded student choices reproduce exactly",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_kernel_vfi.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_vfi.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_howard.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_modified_howard.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_dense_power.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_dense_eigenvector.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_dense_equations.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_sparse_power.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_sparse_eigenvector.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_sparse_equations.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_vfi.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_howard.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_modified_howard.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_gradient.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_adam.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_dense_power.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_dense_eigenvector.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_dense_equations.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_sparse_power.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_sparse_eigenvector.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_sparse_equations.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax2.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax5.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax10.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax20.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax40.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "f_uniform.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "f_nonuniform.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "h_final.npz",
+      "measured": {
+        "k_grid": 0.0,
+        "V": 0.0,
+        "G": 0,
+        "g": 0.0,
+        "c": 0.0,
+        "E": 0.0,
+        "slack_mask": 0,
+        "upper_bound_mask": 0,
+        "pi": 0.0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_gradient_trace.npz",
+      "measured": {
+        "bellman_metric": 0.0,
+        "loss": 0.0,
+        "outer_check": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_adam_trace.npz",
+      "measured": {
+        "bellman_metric": 0.0,
+        "loss": 0.0,
+        "outer_check": 0
+      },
+      "acceptance_criterion": "same shapes; exact policy/mask/check indices; assets <= 1e-12; other arrays elementwise scaled error <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_kernel_vfi:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_vfi:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_howard:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_modified_howard:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_dense_power:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_dense_eigenvector:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_dense_equations:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_sparse_power:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_sparse_eigenvector:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "validation_sparse_equations:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_vfi:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_howard:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_modified_howard:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_gradient:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "a_adam:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_dense_power:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_dense_eigenvector:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_dense_equations:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_sparse_power:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_sparse_eigenvector:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "bc_sparse_equations:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax2:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax5:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax10:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax20:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "e_kmax40:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "f_uniform:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "f_nonuniform:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "h_final:settings/statistics",
+      "measured": {
+        "mismatches": []
+      },
+      "acceptance_criterion": "exact chosen settings/model/grid; statistics agree to scaled 1e-8; counts/runtimes may differ",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "scratch fitted slopes",
+      "measured": {
+        "maximum_difference": 0.0
+      },
+      "acceptance_criterion": "slope/intercept agreement <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "scratch stricter applicable tests",
+      "measured": {
+        "passed": 407,
+        "failed": 0,
+        "pending": 1
+      },
+      "acceptance_criterion": "all applicable numerical/output checks pass; only recursive scratch reproduction can be pending",
+      "status": "pass"
+    }
+  ],
+  "passed": 76,
+  "pending": 0,
+  "failed": 0,
+  "complete": true,
+  "scratch_directory": "C:\\Users\\roymi\\Documents\\GitHub\\Econs509-Roy\\.scratch\\stage4"
+}

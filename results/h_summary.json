@@ -1,0 +1,97 @@
+{
+  "selected_settings": {
+    "solver": "modified_howard",
+    "distribution_method": "power",
+    "representation": "sparse",
+    "representation_format": "CSR",
+    "kmax": 5,
+    "asset_range_chosen_date": "2026-10-02",
+    "family": "nonuniform",
+    "grid_family_chosen_date": "2026-10-02",
+    "N": 5000,
+    "final_N_chosen_date": "2026-10-02",
+    "chosen_date": "2026-10-01",
+    "selection_source": "student choice in chat",
+    "selection_reasons": {
+      "household_solver": "Modified Howard was the fastest passing household option in the reported comparisons.",
+      "invariant_distribution": "Power iteration with sparse CSR was the fastest passing distribution option in the reported comparisons.",
+      "asset_range": "k_max=5 is the smallest tested range with zero top-node mass and contains the distribution's support.",
+      "grid_family": "Its mean Euler error is lower (0.001089 versus 0.001204), and its distribution-weighted mean error is substantially lower (0.000805 versus 0.001472). I accept its higher overall maximum error.",
+      "final_N": "N=5000 gives the lowest mean, maximum, and distribution-weighted Euler errors among the tested grids, with a runtime of about 4.36 seconds."
+    }
+  },
+  "source_case": "g_N5000",
+  "statistics": {
+    "grid_step": 0.0021501561150243376,
+    "slack_count": 9730,
+    "upper_bound_count": 0,
+    "euler_max": 0.0011845562735254278,
+    "euler_mean": 0.00022322327175175577,
+    "unavailable_reasons": {},
+    "mean_assets": 0.4511251527198819,
+    "top_mass": 0.0,
+    "support_endpoint": 3.170181403856212,
+    "support_count": 3943,
+    "support_share": 0.7886,
+    "slack_probability": 0.9122559871965699,
+    "euler_weighted_mean": 0.00015582366969356498,
+    "maximum_weighted_contribution": 6.444449686208805e-06,
+    "euler_support_max": 0.0009660448115436093
+  },
+  "scaling": {
+    "euler_mean": {
+      "slope": 1.0131183382568612,
+      "intercept": -2.197931262670936,
+      "observations": [
+        [
+          0.10761470875459178,
+          0.011769395025163904
+        ],
+        [
+          0.021505568901864613,
+          0.0022580188931132553
+        ],
+        [
+          0.010751673403144757,
+          0.001089122371106306
+        ],
+        [
+          0.005375557900226369,
+          0.0005630959788873062
+        ],
+        [
+          0.0021501561150243376,
+          0.00022322327175175577
+        ]
+      ]
+    },
+    "euler_max": {
+      "slope": 0.9325033681768705,
+      "intercept": -0.9606305343255892,
+      "observations": [
+        [
+          0.10761470875459178,
+          0.04699407234655628
+        ],
+        [
+          0.021505568901864613,
+          0.010251976838281163
+        ],
+        [
+          0.010751673403144757,
+          0.0061242160442391835
+        ],
+        [
+          0.005375557900226369,
+          0.0029740753333833414
+        ],
+        [
+          0.0021501561150243376,
+          0.0011845562735254278
+        ]
+      ]
+    }
+  },
+  "analysis_seconds": 0.030555499994079582,
+  "timing_definition": "Loading saved part-g solutions, fits, scaling JSON write and Euler/statistic recomputation; excludes final-array/table exports and plot rendering/export."
+}

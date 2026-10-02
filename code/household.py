@@ -181,10 +181,10 @@ def solve(problem, method="vfi", tolerance=1e-8, checkpoint=None, max_seconds=12
                      settings=json.dumps(settings, sort_keys=True),
                      trace_d=np.array(trace_d), trace_loss=np.array(trace_loss))
             raise ResumePending(f"{method} saved after {check-1} updates; rerun the same command")
-    elapsed += time.perf_counter()-started
     # Re-evaluate exactly the saved x, including its greedy policy.
     final_T, final_G = problem.bellman(x)
     saved_d = float(np.max(np.abs(final_T-x)/(np.abs(x)+1)))
+    elapsed += time.perf_counter()-started
     if checkpoint is not None and checkpoint.exists():
         checkpoint.unlink()
     metadata = {**settings, "outer_checks": check, "updates": check-1,

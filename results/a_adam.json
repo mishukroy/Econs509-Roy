@@ -1,0 +1,80 @@
+{
+  "case": "a_adam",
+  "parameters": {
+    "beta": 0.96,
+    "sigma": 1.5,
+    "labor": 1.0,
+    "k_min": 0.0,
+    "z": 1.0,
+    "alpha": 0.36,
+    "delta": 0.1,
+    "K0": 5.0,
+    "epsilon": [
+      0.8,
+      1.2
+    ],
+    "P": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "L": 1.0,
+    "w": 1.1423762763050482,
+    "r": 0.028517331084317893
+  },
+  "grid": {
+    "N": 1000,
+    "kmax": 20.0,
+    "family": "uniform"
+  },
+  "solver": {
+    "method": "adam",
+    "tolerance": 1e-08,
+    "cap": 20000,
+    "modified_howard_H": 50,
+    "gradient_step": 0.0005,
+    "adam_learning_rate": 0.1,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-08,
+    "initialization": "zeros",
+    "dtype": "float64",
+    "seed": 0,
+    "outer_checks": 20000,
+    "updates": 19999,
+    "inner_steps": 0,
+    "exit_metric": 0.12530131163354363,
+    "initial_exit_metric": 2.0920902447396457,
+    "status": "unconverged",
+    "setup_seconds": 0.14452460000029532,
+    "solver_seconds": 159.89029660000142,
+    "total_seconds": 160.03482120000172
+  },
+  "distribution": null,
+  "statistics": {
+    "grid_step": 0.020020020020023566,
+    "slack_count": 0,
+    "upper_bound_count": 0,
+    "euler_max": null,
+    "euler_mean": null,
+    "unavailable_reasons": {
+      "unweighted_euler": "No states with positive saving",
+      "distribution_statistics": "This solver run has no invariant distribution"
+    }
+  },
+  "arrays": [
+    "k_grid",
+    "V",
+    "G",
+    "g",
+    "c",
+    "E",
+    "slack_mask",
+    "upper_bound_mask"
+  ]
+}

@@ -18,12 +18,13 @@ sys.path.insert(0, str(ROOT / "code"))
 
 
 class Checks:
-    def __init__(self, stage):
+    def __init__(self, stage, filename=None):
         self.stage = stage
+        self.filename = filename
         self.rows = []
 
     def write(self):
-        target = ROOT / "results" / ("tests_stage3.json" if self.stage == 3 else "tests_final.json")
+        target = ROOT / "results" / (self.filename or ("tests_stage3.json" if self.stage == 3 else "tests_final.json"))
         target.parent.mkdir(exist_ok=True)
         target.write_text(json.dumps({"stage": self.stage, "checks": self.rows,
                                      "passed": sum(r["status"] == "pass" for r in self.rows),

@@ -27,12 +27,14 @@ manual comparison, scalar Bellman checks and kernel stopping/count check,
 and records the remaining validation checks as pending. It does not certify
 stage 3.
 
-The default `python code/run_all.py` reproduces validation while no method
-choices exist. Later experiments require the student's prompt and choices.
+The default `python code/run_all.py` reproduces validation and, when prompt 01
+is present, the baseline comparisons. It stops after (c) when no choices exist,
+and reproduces later blocks only as their required choices have been recorded.
+Later experiments require the student's prompt and choices.
 Use `--part abc`, then `--part e`, `--part f`, `--part g`, and `--part h` only
 as the student authorizes each part. Every part stops at its boundary.
 
-Later `code/selected_settings.json` records these keys: `solver` (one of
+`code/selected_settings.json` records these keys: `solver` (one of
 `vfi`, `howard`, `modified_howard`, `gradient`, `adam`), `distribution_method`
 (`power`, `eigenvector`, `equations`), `representation` (`dense`, `sparse`),
 and, as the student makes each choice, `kmax`, `family` and `N`. The file is
@@ -50,6 +52,33 @@ inspect borrowing-boundary states; reported Euler summaries use only the
 specified positive-saving mask. Distribution figures show masses, including
 on nonuniform grids.
 
-Full baseline gradient tests, final scaling checks, stage-4 output completeness,
-clean-copy reproduction, and the stage-4 folder README remain pending until
-the experiment prompt and student choices are supplied.
+The baseline comparisons passed 114 checks; part (e) passed 66 checks using
+the student's modified-Howard and sparse-CSR power choices. The bound 2 is
+retained as an unsuitable candidate; bounds 5, 10, 20 and 40 are suitable.
+At the student's chosen bound 5, part (f) passed 27 checks on the uniform and
+nonuniform grids using those same methods. Both have zero top-node mass.
+Current partial evidence is in `results/tests_abc.json`, `results/tests_e.json`
+and `results/tests_f.json`.
+The chosen grid family is nonuniform. Part (g) passed 87 checks at
+N=100,500,1000,2000,5000, including data/file checks for all 15 figures
+in PDF and PNG. Its comparison is in `results/nodes.tex` and `results/tables.md`,
+with `results/g_summary.json` and `results/tests_g.json` providing the evidence.
+To recheck the saved range results without repeating their numerical runs:
+
+```text
+python tests/verify_experiments.py --ranges
+python tests/verify_experiments.py --grids
+python tests/verify_experiments.py --nodes
+```
+
+All choices are now recorded, with final N=5000. Part (h) passed 20 numerical,
+OLS, table and figure checks. Root `README.md` is the reader guide;
+`results/tests_final.json` supersedes earlier pending placeholders by consolidating
+their completed Stage-4 portions. `results/reproduction.json` records 76 passing
+independent clean-copy comparisons. The capped gradient/Adam results
+and rejected range 2 remain preserved.
+
+```text
+python tests/verify_accuracy.py
+python tests/verify_stage4.py --refresh
+```

@@ -1,0 +1,12 @@
+{
+  "policy_source": "a_howard",
+  "fingerprint": "9a5660e89fe2e3b5420f234975a1f2634c906a3e27438399f7db5d5a0061e955",
+  "shape": [
+    2000,
+    2000
+  ],
+  "common_construction_seconds": 0.0006192999999257154,
+  "dense_conversion_seconds": 0.006096699999943667,
+  "matrix_load_seconds": 0.0,
+  "timing_note": "Shared matrix setup, excluded from each distribution algorithm's solve time"
+}

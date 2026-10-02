@@ -1,0 +1,111 @@
+{
+  "case": "f_uniform",
+  "parameters": {
+    "beta": 0.96,
+    "sigma": 1.5,
+    "labor": 1.0,
+    "k_min": 0.0,
+    "z": 1.0,
+    "alpha": 0.36,
+    "delta": 0.1,
+    "K0": 5.0,
+    "epsilon": [
+      0.8,
+      1.2
+    ],
+    "P": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "L": 1.0,
+    "w": 1.1423762763050482,
+    "r": 0.028517331084317893
+  },
+  "grid": {
+    "N": 1000,
+    "kmax": 5,
+    "family": "uniform"
+  },
+  "solver": {
+    "method": "modified_howard",
+    "tolerance": 1e-08,
+    "cap": 10000,
+    "modified_howard_H": 50,
+    "gradient_step": 0.0005,
+    "adam_learning_rate": 0.1,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-08,
+    "initialization": "zeros",
+    "dtype": "float64",
+    "seed": 0,
+    "outer_checks": 14,
+    "updates": 13,
+    "inner_steps": 650,
+    "exit_metric": 1.1566924581321328e-12,
+    "initial_exit_metric": 2.0920902447396457,
+    "status": "converged",
+    "setup_seconds": 0.0477485000010347,
+    "solver_seconds": 0.3251367999910144,
+    "total_seconds": 0.3728852999920491
+  },
+  "distribution": {
+    "method": "power",
+    "updates": 172,
+    "power_tolerance": 1e-12,
+    "power_cap": 100000,
+    "eigenvalue_real": null,
+    "eigenvector_imaginary_max": null,
+    "eigen_settings": {
+      "k": 1,
+      "sigma": 0.9999999999,
+      "which": "LM",
+      "tol": 1e-12,
+      "maxiter": 100000,
+      "v0": "ones(M)/sqrt(M)"
+    },
+    "distribution_seconds": 0.01534719999472145,
+    "status": "converged",
+    "raw_minimum": 0.0,
+    "correction_mass": -0.0,
+    "normalization_error": 2.220446049250313e-16,
+    "stationarity_residual": 8.41299252485328e-13,
+    "representation": "sparse",
+    "matrix_construction_seconds": 1.4226594000065234,
+    "matrix_conversion_seconds": 0.0
+  },
+  "statistics": {
+    "grid_step": 0.005005005005005891,
+    "slack_count": 1978,
+    "upper_bound_count": 0,
+    "euler_max": 0.004120963753674656,
+    "euler_mean": 0.0012040313613487475,
+    "unavailable_reasons": {},
+    "mean_assets": 0.4505511652168281,
+    "top_mass": 0.0,
+    "support_endpoint": 3.2182182182182184,
+    "support_count": 634,
+    "support_share": 0.634,
+    "slack_probability": 0.9097710772097237,
+    "euler_weighted_mean": 0.001471999057661486,
+    "maximum_weighted_contribution": 0.00010299895797790693,
+    "euler_support_max": 0.004120963753674656
+  },
+  "arrays": [
+    "k_grid",
+    "V",
+    "G",
+    "g",
+    "c",
+    "E",
+    "slack_mask",
+    "upper_bound_mask",
+    "pi"
+  ]
+}

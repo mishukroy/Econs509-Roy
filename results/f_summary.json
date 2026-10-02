@@ -1,0 +1,51 @@
+{
+  "cases": [
+    {
+      "case": "f_uniform",
+      "N": 1000,
+      "family": "uniform",
+      "kmax": 5,
+      "top_mass": 0.0,
+      "support_endpoint": 3.2182182182182184,
+      "support_share": 0.634,
+      "total_seconds": 1.810891899993294,
+      "candidate_status": "suitable",
+      "outer_checks": 14,
+      "exit_metric": 1.1566924581321328e-12,
+      "stationarity_residual": 8.41299252485328e-13,
+      "mean_assets": 0.4505511652168281,
+      "grid_step": 0.005005005005005891,
+      "euler_mean": 0.0012040313613487475,
+      "euler_max": 0.004120963753674656,
+      "euler_weighted_mean": 0.001471999057661486,
+      "maximum_weighted_contribution": 0.00010299895797790693,
+      "euler_support_max": 0.004120963753674656
+    },
+    {
+      "case": "f_nonuniform",
+      "N": 1000,
+      "family": "nonuniform",
+      "kmax": 5,
+      "top_mass": 0.0,
+      "support_endpoint": 3.2140725170859703,
+      "support_share": 0.799,
+      "total_seconds": 0.18824180000228807,
+      "candidate_status": "suitable",
+      "outer_checks": 13,
+      "exit_metric": 7.908713932900858e-12,
+      "stationarity_residual": 8.487585634320283e-13,
+      "mean_assets": 0.4508539057993334,
+      "grid_step": 0.010751673403144757,
+      "euler_mean": 0.001089122371106306,
+      "euler_max": 0.0061242160442391835,
+      "euler_weighted_mean": 0.0008046570183000875,
+      "maximum_weighted_contribution": 6.136024522151534e-05,
+      "euler_support_max": 0.004072190987686408
+    }
+  ],
+  "passed": 27,
+  "failed": 0,
+  "pending": 3,
+  "total_seconds": 1.999133699995582,
+  "timing_definition": "Household utility setup plus solver plus transition construction/conversion plus invariant distribution; excludes verification and script startup."
+}

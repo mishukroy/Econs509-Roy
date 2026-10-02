@@ -1,0 +1,23 @@
+{
+  "within_dense": {
+    "difference": 5.490038978983591e-12,
+    "pair": [
+      "bc_dense_power",
+      "bc_dense_equations"
+    ]
+  },
+  "within_sparse": {
+    "difference": 5.4899487733628405e-12,
+    "pair": [
+      "bc_sparse_power",
+      "bc_sparse_eigenvector"
+    ]
+  },
+  "across": {
+    "difference": 5.490045917877495e-12,
+    "pair": [
+      "bc_dense_equations",
+      "bc_sparse_power"
+    ]
+  }
+}

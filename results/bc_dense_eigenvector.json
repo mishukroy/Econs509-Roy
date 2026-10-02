@@ -1,0 +1,113 @@
+{
+  "case": "bc_dense_eigenvector",
+  "parameters": {
+    "beta": 0.96,
+    "sigma": 1.5,
+    "labor": 1.0,
+    "k_min": 0.0,
+    "z": 1.0,
+    "alpha": 0.36,
+    "delta": 0.1,
+    "K0": 5.0,
+    "epsilon": [
+      0.8,
+      1.2
+    ],
+    "P": [
+      [
+        0.5,
+        0.5
+      ],
+      [
+        0.5,
+        0.5
+      ]
+    ],
+    "L": 1.0,
+    "w": 1.1423762763050482,
+    "r": 0.028517331084317893
+  },
+  "grid": {
+    "N": 1000,
+    "kmax": 20.0,
+    "family": "uniform"
+  },
+  "solver": {
+    "method": "howard",
+    "tolerance": 1e-08,
+    "cap": 1000,
+    "modified_howard_H": 50,
+    "gradient_step": 0.0005,
+    "adam_learning_rate": 0.1,
+    "adam_beta1": 0.9,
+    "adam_beta2": 0.999,
+    "adam_epsilon": 1e-08,
+    "initialization": "zeros",
+    "dtype": "float64",
+    "seed": 0,
+    "outer_checks": 15,
+    "updates": 14,
+    "inner_steps": 0,
+    "exit_metric": 6.019251319260415e-16,
+    "initial_exit_metric": 2.0920902447396457,
+    "status": "converged",
+    "setup_seconds": 0.03573649999998452,
+    "solver_seconds": 0.7017304999999396,
+    "total_seconds": 0.7374669999999242
+  },
+  "distribution": {
+    "method": "eigenvector",
+    "updates": null,
+    "power_tolerance": 1e-12,
+    "power_cap": 100000,
+    "eigenvalue_real": 1.0,
+    "eigenvector_imaginary_max": 0.0,
+    "eigen_settings": {
+      "k": 1,
+      "sigma": 0.9999999999,
+      "which": "LM",
+      "tol": 1e-12,
+      "maxiter": 100000,
+      "v0": "ones(M)/sqrt(M)"
+    },
+    "distribution_seconds": 0.16238239999984216,
+    "status": "converged",
+    "raw_minimum": -4.0315653078970437e-28,
+    "correction_mass": 4.031565307897044e-27,
+    "normalization_error": 0.0,
+    "stationarity_residual": 1.3877787807814457e-17,
+    "representation": "dense",
+    "matrix_construction_seconds": 0.0006192999999257154,
+    "matrix_conversion_seconds": 0.006096699999943667,
+    "matrix_load_seconds": 0.0,
+    "policy_source": "a_howard"
+  },
+  "statistics": {
+    "grid_step": 0.020020020020023566,
+    "slack_count": 1994,
+    "upper_bound_count": 0,
+    "euler_max": 0.017022358271073346,
+    "euler_mean": 0.003854540720910523,
+    "unavailable_reasons": {},
+    "mean_assets": 0.45263009987885405,
+    "top_mass": 0.0,
+    "support_endpoint": 3.263263263263263,
+    "support_count": 164,
+    "support_share": 0.164,
+    "slack_probability": 0.9074119073592214,
+    "euler_weighted_mean": 0.005664046608521834,
+    "maximum_weighted_contribution": 0.0002525732960244855,
+    "euler_support_max": 0.017022358271073346
+  },
+  "arrays": [
+    "k_grid",
+    "V",
+    "G",
+    "g",
+    "c",
+    "E",
+    "slack_mask",
+    "upper_bound_mask",
+    "pi"
+  ]
+}

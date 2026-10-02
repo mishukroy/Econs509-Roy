@@ -1,0 +1,1228 @@
+{
+  "stage": 4,
+  "checks": [
+    {
+      "id": 9,
+      "input": "g_N100:selected grid settings",
+      "measured": {
+        "grid_error": 0.0,
+        "parameter_error": 0.0,
+        "solver": "modified_howard",
+        "distribution_method": "power",
+        "representation": "sparse",
+        "baseline_eligibility": true,
+        "accepted_bound": true,
+        "accepted_family": true,
+        "family": "nonuniform",
+        "N": 100
+      },
+      "acceptance_criterion": "prescribed node count and grid formula; selected bound for f/g and selected family for g; unchanged model/seed/tolerances; eligible selected methods; complete arrays",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "g_N100",
+      "measured": {
+        "recomputed_metric": 2.0045920699847565e-10,
+        "reported_metric": 2.0045920699847565e-10,
+        "outer_checks": 11,
+        "updates": 10,
+        "inner_steps": 500,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "g_N100",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N100:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N100",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "g_N100",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "g_N100",
+      "measured": {
+        "raw_minimum": 1.3363823550460979e-53,
+        "correction_mass": -0.0,
+        "saved_minimum": 1.3363823550460979e-53
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "g_N100",
+      "measured": {
+        "N": 100,
+        "kmax": 5.0,
+        "top_mass": 2.6727647100921957e-53,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "g_N100",
+      "measured": {
+        "shape": [
+          200,
+          200
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 7.879114027886658e-13,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N100:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11131184806772043,
+        "saved_E": 0.11131184806772043,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N100:state(50,1)",
+      "measured": {
+        "scalar_E": 0.014629522584291066,
+        "saved_E": 0.014629522584291066,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N100:state(99,0)",
+      "measured": {
+        "scalar_E": 0.035026806179784264,
+        "saved_E": 0.035026806179784264,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N100:statistics/masks",
+      "measured": {
+        "mean_assets": 0.0,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 1.734723475976807e-18,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "g_N500:selected grid settings",
+      "measured": {
+        "grid_error": 0.0,
+        "parameter_error": 0.0,
+        "solver": "modified_howard",
+        "distribution_method": "power",
+        "representation": "sparse",
+        "baseline_eligibility": true,
+        "accepted_bound": true,
+        "accepted_family": true,
+        "family": "nonuniform",
+        "N": 500
+      },
+      "acceptance_criterion": "prescribed node count and grid formula; selected bound for f/g and selected family for g; unchanged model/seed/tolerances; eligible selected methods; complete arrays",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "g_N500",
+      "measured": {
+        "recomputed_metric": 6.337547139191876e-11,
+        "reported_metric": 6.337547139191876e-11,
+        "outer_checks": 12,
+        "updates": 11,
+        "inner_steps": 550,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "g_N500",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N500:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N500",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "g_N500",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "g_N500",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "g_N500",
+      "measured": {
+        "N": 500,
+        "kmax": 5.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "g_N500",
+      "measured": {
+        "shape": [
+          1000,
+          1000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 7.530087664520124e-13,
+        "shock_marginals": [
+          0.5000000000000001,
+          0.5000000000000001
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N500:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11404421161173373,
+        "saved_E": 0.11404421161173373,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N500:state(250,1)",
+      "measured": {
+        "scalar_E": 5.468874526237677e-05,
+        "saved_E": 5.468874526237677e-05,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N500:state(499,0)",
+      "measured": {
+        "scalar_E": 0.005219099826125784,
+        "saved_E": 0.005219099826125784,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N500:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 2.168404344971009e-18,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "g_N1000:selected grid settings",
+      "measured": {
+        "grid_error": 0.0,
+        "parameter_error": 0.0,
+        "solver": "modified_howard",
+        "distribution_method": "power",
+        "representation": "sparse",
+        "baseline_eligibility": true,
+        "accepted_bound": true,
+        "accepted_family": true,
+        "family": "nonuniform",
+        "N": 1000
+      },
+      "acceptance_criterion": "prescribed node count and grid formula; selected bound for f/g and selected family for g; unchanged model/seed/tolerances; eligible selected methods; complete arrays",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "g_N1000",
+      "measured": {
+        "recomputed_metric": 7.908713932900858e-12,
+        "reported_metric": 7.908713932900858e-12,
+        "outer_checks": 13,
+        "updates": 12,
+        "inner_steps": 600,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "g_N1000",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N1000:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N1000",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "g_N1000",
+      "measured": {
+        "sum": 1.0000000000000002,
+        "normalization_error": 2.220446049250313e-16
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "g_N1000",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "g_N1000",
+      "measured": {
+        "N": 1000,
+        "kmax": 5.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "g_N1000",
+      "measured": {
+        "shape": [
+          2000,
+          2000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 8.487585634320283e-13,
+        "shock_marginals": [
+          0.5000000000000001,
+          0.5000000000000001
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N1000:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11323765508665451,
+        "saved_E": 0.11323765508665451,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N1000:state(500,1)",
+      "measured": {
+        "scalar_E": 0.00013554905975121656,
+        "saved_E": 0.00013554905975121656,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N1000:state(999,0)",
+      "measured": {
+        "scalar_E": 0.001802330748550851,
+        "saved_E": 0.001802330748550851,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N1000:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 1.4094628242311558e-18,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "g_N2000:selected grid settings",
+      "measured": {
+        "grid_error": 0.0,
+        "parameter_error": 0.0,
+        "solver": "modified_howard",
+        "distribution_method": "power",
+        "representation": "sparse",
+        "baseline_eligibility": true,
+        "accepted_bound": true,
+        "accepted_family": true,
+        "family": "nonuniform",
+        "N": 2000
+      },
+      "acceptance_criterion": "prescribed node count and grid formula; selected bound for f/g and selected family for g; unchanged model/seed/tolerances; eligible selected methods; complete arrays",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "g_N2000",
+      "measured": {
+        "recomputed_metric": 2.846878254918857e-09,
+        "reported_metric": 2.846878254918857e-09,
+        "outer_checks": 14,
+        "updates": 13,
+        "inner_steps": 650,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "g_N2000",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N2000:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N2000",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "g_N2000",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "g_N2000",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "g_N2000",
+      "measured": {
+        "N": 2000,
+        "kmax": 5.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "g_N2000",
+      "measured": {
+        "shape": [
+          4000,
+          4000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 8.506320647860832e-13,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N2000:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11374961482846513,
+        "saved_E": 0.11374961482846513,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N2000:state(1000,1)",
+      "measured": {
+        "scalar_E": 2.7030624261126235e-05,
+        "saved_E": 2.7030624261126235e-05,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N2000:state(1999,0)",
+      "measured": {
+        "scalar_E": 0.00017821711959875586,
+        "saved_E": 0.00017821711959875586,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N2000:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 8.673617379884035e-19,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "g_N5000:selected grid settings",
+      "measured": {
+        "grid_error": 0.0,
+        "parameter_error": 0.0,
+        "solver": "modified_howard",
+        "distribution_method": "power",
+        "representation": "sparse",
+        "baseline_eligibility": true,
+        "accepted_bound": true,
+        "accepted_family": true,
+        "family": "nonuniform",
+        "N": 5000
+      },
+      "acceptance_criterion": "prescribed node count and grid formula; selected bound for f/g and selected family for g; unchanged model/seed/tolerances; eligible selected methods; complete arrays",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "g_N5000",
+      "measured": {
+        "recomputed_metric": 6.314187247697306e-09,
+        "reported_metric": 6.314187247697306e-09,
+        "outer_checks": 14,
+        "updates": 13,
+        "inner_steps": 650,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "g_N5000",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N5000:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "g_N5000",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "g_N5000",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "g_N5000",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "g_N5000",
+      "measured": {
+        "N": 5000,
+        "kmax": 5.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "g_N5000",
+      "measured": {
+        "shape": [
+          10000,
+          10000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 8.521655603388467e-13,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N5000:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11369074885702579,
+        "saved_E": 0.11369074885702579,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N5000:state(2500,1)",
+      "measured": {
+        "scalar_E": 0.00020440834013868425,
+        "saved_E": 0.00020440834013868425,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N5000:state(4999,0)",
+      "measured": {
+        "scalar_E": 0.0004974479143844412,
+        "saved_E": 0.0004974479143844412,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "g_N5000:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 7.589415207398531e-19,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "nodes:partial table contents",
+      "measured": {
+        "mismatched_rows": []
+      },
+      "acceptance_criterion": "all prescribed JSON-derived rows and unchanged top masses in complete LaTeX tabular and Markdown",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N100:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N500:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N1000:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N2000:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:value:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:policy:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:distribution:plotted data",
+      "measured": [
+        {
+          "shock": 0,
+          "x_error": 0.0,
+          "y_error": 0.0
+        },
+        {
+          "shock": 1,
+          "x_error": 0.0,
+          "y_error": 0.0
+        }
+      ],
+      "acceptance_criterion": "exact assets and saved values/policies/joint masses for both labeled shocks; nonuniform plots are masses",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "g_N5000:figure files",
+      "measured": {
+        "missing": [],
+        "invalid": []
+      },
+      "acceptance_criterion": "value/policy/joint-mass figures exist as nonempty PDF and PNG",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "part g:complete figure checks",
+      "measured": {
+        "missing_checks": [],
+        "expected_count": 20
+      },
+      "acceptance_criterion": "all 15 plots' data and all five PDF/PNG file groups verified",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "remaining parts and student choices",
+      "measured": null,
+      "acceptance_criterion": "Pending part h and student's final-N choice",
+      "status": "pending"
+    },
+    {
+      "id": 11,
+      "input": "final Euler/scaling observations and slopes",
+      "measured": null,
+      "acceptance_criterion": "Pending part h",
+      "status": "pending"
+    },
+    {
+      "id": 12,
+      "input": "complete stage-4 outputs, README and scratch reproduction",
+      "measured": null,
+      "acceptance_criterion": "Pending remaining experiments and recorded choices",
+      "status": "pending"
+    }
+  ],
+  "passed": 87,
+  "pending": 3,
+  "failed": 0
+}

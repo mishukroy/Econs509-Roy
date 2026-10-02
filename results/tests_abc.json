@@ -1,0 +1,1426 @@
+{
+  "stage": 4,
+  "checks": [
+    {
+      "id": 7,
+      "input": "parameters, prices, shock order, both grid formulas",
+      "measured": {
+        "beta": 0.0,
+        "sigma": 0.0,
+        "labor": 0.0,
+        "k_min": 0.0,
+        "z": 0.0,
+        "alpha": 0.0,
+        "delta": 0.0,
+        "K0": 0.0,
+        "r": 0.0,
+        "w": 0.0,
+        "L": 0.0,
+        "shock_order": 0.0,
+        "P": 0.0,
+        "uniform_100": 0.0,
+        "uniform_1000": 0.0,
+        "nonuniform_100": 0.0,
+        "nonuniform_1000": 0.0
+      },
+      "acceptance_criterion": "absolute discrepancies <= 1e-12; exact endpoints",
+      "status": "pass"
+    },
+    {
+      "id": 7,
+      "input": "validation",
+      "measured": {
+        "max_value_difference": 0.0,
+        "policy_mismatches": 0
+      },
+      "acceptance_criterion": "value difference <= 1.9480902447396456e-12; zero policy mismatches",
+      "status": "pass"
+    },
+    {
+      "id": 7,
+      "input": "asymmetric_shock_test",
+      "measured": {
+        "max_value_difference": 0.0,
+        "policy_mismatches": 0
+      },
+      "acceptance_criterion": "value difference <= 2.0344902447396458e-12; zero policy mismatches",
+      "status": "pass"
+    },
+    {
+      "id": 7,
+      "input": "exact tie at joint state 0",
+      "measured": {
+        "chosen_index": 0
+      },
+      "acceptance_criterion": "smallest savings index, 0",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "a_vfi:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": null
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "a_vfi",
+      "measured": {
+        "recomputed_metric": 9.718061290765203e-09,
+        "reported_metric": 9.718061290765203e-09,
+        "outer_checks": 379,
+        "updates": 378,
+        "inner_steps": 0,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "a_vfi",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "a_vfi:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "a_vfi",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_vfi:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_vfi:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_vfi:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_vfi:unweighted statistics",
+      "measured": {
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; summary discrepancy <= 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "a_howard:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": null
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "a_howard",
+      "measured": {
+        "recomputed_metric": 6.019251319260415e-16,
+        "reported_metric": 6.019251319260415e-16,
+        "outer_checks": 15,
+        "updates": 14,
+        "inner_steps": 0,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "a_howard",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "a_howard:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "a_howard",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_howard:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_howard:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_howard:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_howard:unweighted statistics",
+      "measured": {
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; summary discrepancy <= 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "a_modified_howard:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": null
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "a_modified_howard",
+      "measured": {
+        "recomputed_metric": 1.6588423037075027e-13,
+        "reported_metric": 1.6588423037075027e-13,
+        "outer_checks": 15,
+        "updates": 14,
+        "inner_steps": 700,
+        "status": "converged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "a_modified_howard",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "a_modified_howard:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "a_modified_howard",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_modified_howard:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_modified_howard:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_modified_howard:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "a_modified_howard:unweighted statistics",
+      "measured": {
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; summary discrepancy <= 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "a_gradient:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": null
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "a_gradient",
+      "measured": {
+        "recomputed_metric": 1.2576012260562737,
+        "reported_metric": 1.2576012260562737,
+        "outer_checks": 20000,
+        "updates": 19999,
+        "inner_steps": 0,
+        "status": "unconverged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "a_gradient:trace",
+      "measured": {
+        "checks": 20000,
+        "trace_length": 20000,
+        "initial_loss": 577.9311429748343,
+        "final_loss": 3.721726396996855,
+        "recomputed_final_loss": 3.721726396996855
+      },
+      "acceptance_criterion": "one finite loss/metric per outer check, exact check indices; recomputed endpoint metrics/losses agree",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "a_adam:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": null
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "a_adam",
+      "measured": {
+        "recomputed_metric": 0.12530131163354363,
+        "reported_metric": 0.12530131163354363,
+        "outer_checks": 20000,
+        "updates": 19999,
+        "inner_steps": 0,
+        "status": "unconverged"
+      },
+      "acceptance_criterion": "saved metric agrees <= 1e-12; specified settings/counts, finite values and valid exit",
+      "status": "pass"
+    },
+    {
+      "id": 10,
+      "input": "a_adam:trace",
+      "measured": {
+        "checks": 20000,
+        "trace_length": 20000,
+        "initial_loss": 577.9311429748343,
+        "final_loss": 2.1457519517416204,
+        "recomputed_final_loss": 2.1457519517416204
+      },
+      "acceptance_criterion": "one finite loss/metric per outer check, exact check indices; recomputed endpoint metrics/losses agree",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "bc_dense_power:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": 0
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "bc_dense_power",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_dense_power:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_dense_power",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "bc_dense_power",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "bc_dense_power",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "bc_dense_power",
+      "measured": {
+        "N": 1000,
+        "kmax": 20.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "bc_dense_power",
+      "measured": {
+        "shape": [
+          2000,
+          2000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 7.76899378163165e-13,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_power:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_power:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_power:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_power:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 8.673617379884035e-19,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "bc_dense_eigenvector:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": 0
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "bc_dense_eigenvector",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_dense_eigenvector:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_dense_eigenvector",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "bc_dense_eigenvector",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "bc_dense_eigenvector",
+      "measured": {
+        "raw_minimum": -4.0315653078970437e-28,
+        "correction_mass": 4.031565307897044e-27,
+        "saved_minimum": -0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "bc_dense_eigenvector",
+      "measured": {
+        "N": 1000,
+        "kmax": 20.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "bc_dense_eigenvector",
+      "measured": {
+        "shape": [
+          2000,
+          2000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 1.3877787807814457e-17,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_eigenvector:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_eigenvector:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_eigenvector:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_eigenvector:statistics/masks",
+      "measured": {
+        "mean_assets": 0.0,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 3.469446951953614e-18,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "bc_dense_equations:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": 0
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "bc_dense_equations",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_dense_equations:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_dense_equations",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "bc_dense_equations",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "bc_dense_equations",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "bc_dense_equations",
+      "measured": {
+        "N": 1000,
+        "kmax": 20.0,
+        "top_mass": 3.988237292980981e-18,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "bc_dense_equations",
+      "measured": {
+        "shape": [
+          2000,
+          2000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 2.706168622523819e-16,
+        "shock_marginals": [
+          0.49999999999999983,
+          0.5000000000000001
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_equations:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_equations:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_equations:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_dense_equations:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 4.336808689942018e-18,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "bc_sparse_power:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": 0
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "bc_sparse_power",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_sparse_power:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_sparse_power",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "bc_sparse_power",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "bc_sparse_power",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "bc_sparse_power",
+      "measured": {
+        "N": 1000,
+        "kmax": 20.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "bc_sparse_power",
+      "measured": {
+        "shape": [
+          2000,
+          2000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 7.769063170570689e-13,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_power:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_power:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_power:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_power:statistics/masks",
+      "measured": {
+        "mean_assets": 0.0,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 0.0,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "bc_sparse_eigenvector:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": 0
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "bc_sparse_eigenvector",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_sparse_eigenvector:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_sparse_eigenvector",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "bc_sparse_eigenvector",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "bc_sparse_eigenvector",
+      "measured": {
+        "raw_minimum": -8.063130615794091e-28,
+        "correction_mass": 1.2593602130543394e-25,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "bc_sparse_eigenvector",
+      "measured": {
+        "N": 1000,
+        "kmax": 20.0,
+        "top_mass": 0.0,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "bc_sparse_eigenvector",
+      "measured": {
+        "shape": [
+          2000,
+          2000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 1.3877787807814457e-17,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_eigenvector:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_eigenvector:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_eigenvector:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_eigenvector:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 3.469446951953614e-18,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "bc_sparse_equations:baseline settings",
+      "measured": {
+        "grid_error": 3.552713678800501e-15,
+        "parameter_error": 0.0,
+        "Howard_policy_mismatches": 0
+      },
+      "acceptance_criterion": "specified baseline N/grid/parameters/tolerance/seed; recorded arrays; common Howard policy and specified distribution settings",
+      "status": "pass"
+    },
+    {
+      "id": 2,
+      "input": "bc_sparse_equations",
+      "measured": {
+        "violation_count": 0,
+        "locations": []
+      },
+      "acceptance_criterion": "no decreasing adjacent policy indices",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_sparse_equations:indices",
+      "measured": {
+        "valid_integer_indices": true
+      },
+      "acceptance_criterion": "integer indices in [0,N-1]",
+      "status": "pass"
+    },
+    {
+      "id": 3,
+      "input": "bc_sparse_equations",
+      "measured": {
+        "minimum_consumption": 0.9139010210440386,
+        "minimum_state": [
+          0,
+          0
+        ],
+        "budget_discrepancy": 0.0
+      },
+      "acceptance_criterion": "finite positive consumption; saved budget agreement <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 4,
+      "input": "bc_sparse_equations",
+      "measured": {
+        "sum": 1.0,
+        "normalization_error": 0.0
+      },
+      "acceptance_criterion": "finite entries; normalization error <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 5,
+      "input": "bc_sparse_equations",
+      "measured": {
+        "raw_minimum": 0.0,
+        "correction_mass": -0.0,
+        "saved_minimum": 0.0
+      },
+      "acceptance_criterion": "raw minimum >= -1e-14; saved minimum >= 0; correction mass nonnegative",
+      "status": "pass"
+    },
+    {
+      "id": 6,
+      "input": "bc_sparse_equations",
+      "measured": {
+        "N": 1000,
+        "kmax": 20.0,
+        "top_mass": 1.0422725271929428e-19,
+        "candidate_status": "suitable"
+      },
+      "acceptance_criterion": "top mass <= 1e-12 on accepted grids; retain unsuitable range trials",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "bc_sparse_equations",
+      "measured": {
+        "shape": [
+          2000,
+          2000
+        ],
+        "transition_error": 0.0,
+        "row_sum_error": 0.0,
+        "stationarity_residual": 1.0408340855860843e-17,
+        "shock_marginals": [
+          0.5,
+          0.5
+        ]
+      },
+      "acceptance_criterion": "correct nonnegative transitions/shape; row/entry error <= 1e-12; stationarity/shock errors <= 1e-10",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_equations:state(0,0)",
+      "measured": {
+        "scalar_E": 0.11227851817634349,
+        "saved_E": 0.11227851817634349,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_equations:state(500,1)",
+      "measured": {
+        "scalar_E": 0.003943844293461396,
+        "saved_E": 0.003943844293461396,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_equations:state(999,0)",
+      "measured": {
+        "scalar_E": 0.0032897233633017997,
+        "saved_E": 0.0032897233633017997,
+        "difference": 0.0
+      },
+      "acceptance_criterion": "scalar/saved discrepancy <= 1e-12*max(1,abs(E))",
+      "status": "pass"
+    },
+    {
+      "id": 11,
+      "input": "bc_sparse_equations:statistics/masks",
+      "measured": {
+        "mean_assets": 5.551115123125783e-17,
+        "top_mass": 0.0,
+        "support_endpoint": 0.0,
+        "support_share": 0.0,
+        "support_count": 0.0,
+        "grid_step": 0.0,
+        "slack_count": 0.0,
+        "upper_bound_count": 0.0,
+        "slack_probability": 0.0,
+        "euler_max": 0.0,
+        "euler_mean": 0.0,
+        "euler_weighted_mean": 3.469446951953614e-18,
+        "maximum_weighted_contribution": 0.0,
+        "euler_support_max": 0.0
+      },
+      "acceptance_criterion": "exact masks/counts; statistics agree within 1e-12*max(1,abs(reference))",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "baseline distribution agreement",
+      "measured": {
+        "maximum_difference": 5.490045917877495e-12,
+        "pair": [
+          "bc_dense_equations",
+          "bc_sparse_power"
+        ]
+      },
+      "acceptance_criterion": "maximum pairwise difference <= 1e-8",
+      "status": "pass"
+    },
+    {
+      "id": 8,
+      "input": "baseline dense/CSR transition agreement",
+      "measured": {
+        "maximum_entry_difference": 0.0
+      },
+      "acceptance_criterion": "entry difference <= 1e-12",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "solvers:partial table contents",
+      "measured": {
+        "mismatched_rows": []
+      },
+      "acceptance_criterion": "complete tabular and exact formatted rows from numerical JSON in LaTeX/Markdown",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "distribution_dense:partial table contents",
+      "measured": {
+        "mismatched_rows": []
+      },
+      "acceptance_criterion": "complete tabular and exact formatted rows from numerical JSON in LaTeX/Markdown",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "distribution_sparse:partial table contents",
+      "measured": {
+        "mismatched_rows": []
+      },
+      "acceptance_criterion": "complete tabular and exact formatted rows from numerical JSON in LaTeX/Markdown",
+      "status": "pass"
+    },
+    {
+      "id": 9,
+      "input": "parts e-h and recorded student choices",
+      "measured": null,
+      "acceptance_criterion": "Pending the student's binding choices",
+      "status": "pending"
+    },
+    {
+      "id": 11,
+      "input": "final Euler/scaling observations and slopes",
+      "measured": null,
+      "acceptance_criterion": "Pending parts g-h",
+      "status": "pending"
+    },
+    {
+      "id": 12,
+      "input": "complete stage-4 outputs, README and scratch reproduction",
+      "measured": null,
+      "acceptance_criterion": "Pending remaining experiments and recorded choices",
+      "status": "pending"
+    }
+  ],
+  "passed": 114,
+  "pending": 3,
+  "failed": 0
+}

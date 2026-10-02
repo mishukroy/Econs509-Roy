@@ -1,0 +1,29 @@
+{
+  "stage": 4,
+  "checks": [
+    {
+      "id": 12,
+      "input": "h_euler:plotted data",
+      "measured": {
+        "slack_states": 9730
+      },
+      "acceptance_criterion": "exact saved assets/residuals on each shock's positive-saving mask; both shocks/N labeled",
+      "status": "pass"
+    },
+    {
+      "id": 12,
+      "input": "h_scaling:plotted data",
+      "measured": {
+        "observations_per_curve": [
+          5,
+          5
+        ]
+      },
+      "acceptance_criterion": "both log-log curves equal saved positive finite step/error observations",
+      "status": "pass"
+    }
+  ],
+  "passed": 2,
+  "pending": 0,
+  "failed": 0
+}
